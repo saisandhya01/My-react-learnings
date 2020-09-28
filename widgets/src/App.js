@@ -1,5 +1,7 @@
 import React from "react";
 import Accordion from "./components/Accordion";
+import Route from "./components/Route";
+import Header from "./components/Header";
 import Search from "./components/Search";
 
 const items = [
@@ -20,7 +22,13 @@ const items = [
 const App = () => {
   return (
     <div>
-      <Search />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
     </div>
   );
 };
